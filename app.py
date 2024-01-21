@@ -45,12 +45,7 @@ def get_colors(msg):
     
 @app.route("/")
 def index():
-    response = openai.Completion.create(
-        prompt = "Give me a funny word",
-        model = "gpt-3.5-turbo-instruct"
-    )
-    
-    return response["choices"][0]["text"]
+    return render_template("index.html")
 
 @app.route("/palette", methods=["POST"])
 def prompt_to_palette():
